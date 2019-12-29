@@ -42,7 +42,7 @@ def move_select_or_do(e):
     elif e.keysym == 'space' and elements[selected_element] != element3:
         elements[selected_element].do()
 
-    elif e.keysym == 'space' and selected_element == 2:
+    elif e.keysym == 'space' and elements[selected_element] == element3:
         element3.do(windowelements)
         elements = windowelements
         selected_element = 0
