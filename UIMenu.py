@@ -5,4 +5,7 @@ class UIMenu(UIElement):
     def __init__(self, col_select, col_deselect, text, c, ui_boundaries):
         super().__init__(col_select, col_deselect, text, c, ui_boundaries)
 
+    def do(self, window):
+        for i in window:
+            i.render()
 
