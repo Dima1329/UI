@@ -1,4 +1,4 @@
-from    UIElement import *
+from UIElement import *
 
 
 class UIInfo(UIElement):
