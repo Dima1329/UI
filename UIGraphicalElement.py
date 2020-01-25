@@ -9,6 +9,7 @@ class UIGraphicalElement:
         self.id_rect = 0
         self.text = text
 
+    # TODO Перейти на цвета (убрать self.col_select if is_selected else self.col_deselect)
     def draw_rect(self, is_selected):
         if self.id_rect != 0:
             self.c.delete(self.id_rect)
@@ -26,3 +27,11 @@ class UIGraphicalElement:
                                           self.ui_boundaries.get_center_y(),
                                           text=self.text,
                                           fill=self.col_deselect if is_selected else self.col_select)
+
+    def hide(self):
+        self.c.itemconfigure(self.id_rect, state='hidden')
+        self.c.itemconfigure(self.id_text, state='hidden')
+
+    def show(self):
+        self.c.itemconfigure(self.id_rect, state='normal')
+        self.c.itemconfigure(self.id_text, state='normal')

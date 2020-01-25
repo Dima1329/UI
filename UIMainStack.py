@@ -5,10 +5,16 @@ class UIMainStack():
 
     def pop(self):
         if len(self.stack_windows) > 1:
-            return self.stack_windows.pop(),\
-                   self.stack_state.pop()
+            self.stack_windows.pop()
+            self.stack_state.pop()
+            for element in self.get_menu():
+                element.show()
 
     def push(self, n):
+        if len(self.stack_windows) > 0:
+            for element in self.get_menu():
+                element.hide()
+
         self.stack_windows.append(n)
         self.stack_state.append(0)
 
