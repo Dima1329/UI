@@ -6,12 +6,13 @@ from UIMainStack import UIMainStack
 from UIMenu import UIMenu
 
 window = Tk()
-canvas = Canvas(window, width=500, height=500, )
+canvas = Canvas(window, width=500, height=110)
 canvas.pack()
 menu_stack = UIMainStack()
 canvas.create_rectangle(0, 0, 500, 500, fill="grey")
 
 bounderies1 = UIElementBoundaries(10, 10, 490, 40)
+
 element1 = UIButton("black", "white", "Button", canvas, bounderies1, lambda: print("Done Button"))
 
 bounderies2 = UIElementBoundaries(10, 40, 490, 70)
@@ -46,7 +47,7 @@ def move_select_or_do(e):
             menu_stack.set_state(0)
         else:
             menu_stack.set_state(menu_stack.get_state() + 1)
-    elif e.keysym == 'space':
+    elif e.keysym == 'space' or e.keysym == 'Right':
         canvas.create_rectangle(0, 0, 500, 500, fill="grey")
         menu_stack.get_menu()[menu_stack.get_state()].do()
 

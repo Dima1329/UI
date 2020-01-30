@@ -9,4 +9,4 @@ class UIMenu(UIElement):
         self.s = stack
 
     def do(self):
-        self.s.push(self.window)
+        self.s.push(self.window, )
