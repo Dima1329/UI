@@ -29,13 +29,12 @@ windowelements = [elementm1, elementm2, elementm3]  # 2
 
 element3 = UIMenu("black", "white", "Menushka", canvas, bounderies3, windowelements, menu_stack)
 
-  # 1
+# 1
 
 menu_stack.push([element1, element2, element3])
 
 
 def move_select_or_do(e):
-
     menu_stack.get_menu()[menu_stack.get_state()].set_deselect()
     if e.keysym == 'Up':
         if menu_stack.get_state() == 0:
@@ -63,5 +62,3 @@ while True:
     window.update()
     for i in menu_stack.get_menu():
         i.render()
-
-

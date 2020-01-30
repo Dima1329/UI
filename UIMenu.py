@@ -10,6 +10,3 @@ class UIMenu(UIElement):
 
     def do(self):
         self.s.push(self.window)
-
-
-

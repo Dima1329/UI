@@ -1,4 +1,4 @@
-class UIMainStack():
+class UIMainStack:
     def __init__(self):
         self.stack_windows = []
         self.stack_state = []

@@ -8,4 +8,3 @@ class UIButton(UIElement):
 
     def do(self):
         self.do()
-

@@ -19,4 +19,3 @@ class UIElement(UIGraphicalElement):
     def render(self):
         self.draw_rect(self.selected)
         self.draw_text(self.selected)
-
