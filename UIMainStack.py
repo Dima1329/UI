@@ -36,6 +36,7 @@ class UIMainStack:
         self.is_down = _is_
     def get_is_down(self):
         return self.is_down
+    #TODO добавить прокрутку вверх после скролла
     def get_menu(self):
         if len(self.stack_windows[-1]) == 3:
             return self.stack_windows[-1]
