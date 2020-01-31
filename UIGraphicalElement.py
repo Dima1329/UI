@@ -13,20 +13,12 @@ class UIGraphicalElement:
     def draw_rect(self, is_selected):
         if self.id_rect != 0:
             self.c.delete(self.id_rect)
-        self.id_rect = self.c.create_rectangle(self.ui_boundaries.x,
-                                               self.ui_boundaries.y,
-                                               self.ui_boundaries.x1,
-                                               self.ui_boundaries.y1,
-                                               fill=self.col_select if is_selected else self.col_deselect,
-                                               outline="black")
+        self.id_rect = self.c.create_rectangle(self.ui_boundaries.x,self.ui_boundaries.y,self.ui_boundaries.x1,self.ui_boundaries.y1,fill=self.col_select if is_selected else self.col_deselect,outline="black")
 
     def draw_text(self, is_selected):
         if self.id_text != 0:
             self.c.delete(self.id_text)
-        self.id_text = self.c.create_text(self.ui_boundaries.get_center_x(),
-                                          self.ui_boundaries.get_center_y(),
-                                          text=self.text,
-                                          fill=self.col_deselect if is_selected else self.col_select)
+        self.id_text = self.c.create_text(self.ui_boundaries.get_center_x(),self.ui_boundaries.get_center_y(),text=self.text,fill=self.col_deselect if is_selected else self.col_select)
 
     def hide(self):
         self.c.itemconfigure(self.id_rect, state='hidden')
@@ -35,3 +27,6 @@ class UIGraphicalElement:
     def show(self):
         self.c.itemconfigure(self.id_rect, state='normal')
         self.c.itemconfigure(self.id_text, state='normal')
+
+    def hide_everything(c):
+        c.create_rectangle(0, 0, 500, 500, fill="grey")

@@ -8,7 +8,7 @@ from UIMenu import UIMenu
 window = Tk()
 canvas = Canvas(window, width=500, height=110)
 canvas.pack()
-menu_stack = UIMainStack()
+menu_stack = UIMainStack(canvas)
 canvas.create_rectangle(0, 0, 500, 500, fill="grey")
 
 bounderies1 = UIElementBoundaries(10, 10, 490, 40)
@@ -29,24 +29,28 @@ elementm3 = UIMenu("black", "white", "M1", canvas, bounderies3, windowelements1,
 windowelements = [elementm1, elementm2, elementm3]  # 2
 
 element3 = UIMenu("black", "white", "Menushka", canvas, bounderies3, windowelements, menu_stack)
-
+element4 = UIInfo("black", "white", "It works!", canvas, bounderies1)
 # 1
 
-menu_stack.push([element1, element2, element3])
+menu_stack.push([element1, element2, element3, element4])
 
 
 def move_select_or_do(e):
     menu_stack.get_menu()[menu_stack.get_state()].set_deselect()
     if e.keysym == 'Up':
-        if menu_stack.get_state() == 0:
+        if menu_stack.get_state() == 0 and menu_stack.get_is_down() == "True":
+            menu_stack.set_state("Up")
+            menu_stack.set_state(len(menu_stack.get_menu()) - 1)
+            menu_stack.set_state("False")
+        elif menu_stack.get_state() == 0:
             menu_stack.set_state(len(menu_stack.get_menu()) - 1)
         else:
             menu_stack.set_state(menu_stack.get_state() - 1)
     elif e.keysym == 'Down':
-        if menu_stack.get_state() + 1 == len(menu_stack.get_menu()):
+        menu_stack.set_state(menu_stack.get_state()+1)
+        if menu_stack.get_state() == len(menu_stack.get_menu()):
             menu_stack.set_state(0)
-        else:
-            menu_stack.set_state(menu_stack.get_state() + 1)
+
     elif e.keysym == 'space' or e.keysym == 'Right':
         canvas.create_rectangle(0, 0, 500, 500, fill="grey")
         menu_stack.get_menu()[menu_stack.get_state()].do()
@@ -61,5 +65,6 @@ canvas.bind_all('<Key>', move_select_or_do)
 element1.set_select()
 while True:
     window.update()
+
     for i in menu_stack.get_menu():
         i.render()
