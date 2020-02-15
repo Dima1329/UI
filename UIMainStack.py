@@ -1,5 +1,6 @@
 class UIMainStack():
-    def __init__(self):
+    def __init__(self,scroller):
+        self.scroller = scroller
         self.stack_windows = []
         self.stack_state = []
 
@@ -25,4 +26,4 @@ class UIMainStack():
         self.stack_state[-1] = state
 
     def get_menu(self):
-        return self.stack_windows[-1]
+        return self.scroller.get_scrolled_window()

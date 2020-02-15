@@ -35,3 +35,9 @@ class UIGraphicalElement:
     def show(self):
         self.c.itemconfigure(self.id_rect, state='normal')
         self.c.itemconfigure(self.id_text, state='normal')
+
+    def hide_everything(self):
+        self.c.create_rectangle(0, 0, 500, 110, fill="grey")
+
+    def set_boundaries(self, b):
+        self.ui_boundaries = b
