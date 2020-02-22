@@ -38,22 +38,19 @@ element5 = UIInfo("black", "white", "I12", canvas, bounderies5)
 element6 = UIInfo("black", "white", "I13", canvas, bounderies5)
 element7 = UIInfo("black", "white", "I14", canvas, bounderies5)
 
-menu_stack.push([element1, element2, element4,element3,element5,element6,element7])
+menu_stack.push([element1, element2, element3,element4,element5,element6,element7])
 
 
 def move_select_or_do(e):
     menu_stack.get_menu()[menu_stack.get_state()].hide_everything()
     menu_stack.get_menu()[menu_stack.get_state()].set_deselect()
     if e.keysym == 'Up':
-        if menu_stack.get_state() != 0:
-            menu_stack.set_state(menu_stack.get_state() - 1)
+        scroller.window_up()
 
     elif e.keysym == 'Down':
-        if menu_stack.get_state() + 1 != len(menu_stack.get_menu()):
-            menu_stack.set_state(menu_stack.get_state() + 1)
+        scroller.window_down()
 
     elif e.keysym == 'space' or e.keysym == 'Right':
-
         menu_stack.get_menu()[menu_stack.get_state()].do()
 
     elif e.keysym == "Left":
