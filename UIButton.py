@@ -2,8 +2,8 @@ from UIElement import *
 
 
 class UIButton(UIElement):
-    def __init__(self, col_select, col_deselect, text, c, ui_boundaries, do):
-        super().__init__(col_select, col_deselect, text, c, ui_boundaries)
+    def __init__(self, col_select, col_deselect, text, c,  do):
+        super().__init__(col_select, col_deselect, text, c)
         self.do = do
 
     def do(self):

@@ -1,10 +1,10 @@
-
+from UIElementBoundaries import *
 class UIGraphicalElement:
-    def __init__(self, canvas, col_select, col_deselect, ui_boudaries, text):
+    def __init__(self, canvas, col_select, col_deselect, text):
         self.col_select = col_select
         self.col_deselect = col_deselect
         self.c = canvas
-        self.ui_boundaries = ui_boudaries
+        self.ui_boundaries = UIElementBoundaries(0, 0, 0, 0)
         self.id_text = 0
         self.id_rect = 0
         self.text = text

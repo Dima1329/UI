@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#C:/Users/Petrov/PycharmProjects/UI/UIGraphicalElement.py</OriginalElement>
+  <nodes>
+    <node x="573.0" y="467.0">UIElement.UIElement</node>
+    <node x="0.0" y="0.0">UIGraphicalElement.UIGraphicalElement</node>
+    <node x="1101.0" y="726.0">UIInfo.UIInfo</node>
+    <node x="0.0" y="938.0">UIScroll.UIScroller</node>
+    <node x="865.0" y="938.0">UIMainStack.UIMainStack</node>
+    <node x="1312.0" y="726.0">UIButton.UIButton</node>
+    <node x="1885.0" y="726.0">UIMenu.UIMenu</node>
+    <node x="389.0" y="938.0">UIElementBoundaries.UIElementBoundaries</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="UIElement.UIElement" target="UIGraphicalElement.UIGraphicalElement">
+      <point x="0.0" y="0.0" />
+      <point x="817.0" y="213.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="UIMenu.UIMenu" target="UIElement.UIElement">
+      <point x="0.0" y="0.0" />
+      <point x="2201.0" y="576.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="UIInfo.UIInfo" target="UIElement.UIElement">
+      <point x="0.0" y="0.0" />
+      <point x="1186.5" y="576.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="UIButton.UIButton" target="UIElement.UIElement">
+      <point x="0.0" y="0.0" />
+      <point x="1578.5" y="576.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Tree" zoom="0.581789515175404" x="1258.5" y="656.5" />
+  <SelectedNodes>
+    <node>UIScroll.UIScroller</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Fields</Category>
+  </Categories>
+</Diagram>
+

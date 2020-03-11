@@ -2,4 +2,5 @@ from UIElement import *
 
 
 class UIInfo(UIElement):
-    pass
+    def do(self):
+        print("No action for info element")
