@@ -11,16 +11,8 @@ class UIScroller:
 
     def update(self):
         state = self.stack.get_state()
-        if len(self.stack.stack_windows[-1]) ==1:
-
-                    self.stack.stack_windows[-1][0].set_boundaries(self.boundaries1)
-        elif len(self.stack.stack_windows[-1]) == 2:
-                self.stack.stack_windows[-1][0].set_boundaries(self.boundaries1)
-                self.stack.stack_windows[-1][1].set_boundaries(self.boundaries2)
-        elif len(self.stack.stack_windows[-1]) < 4:
-            self.stack.stack_windows[-1][0].set_boundaries(self.boundaries1)
-            self.stack.stack_windows[-1][1].set_boundaries(self.boundaries2)
-            self.stack.stack_windows[-1][2].set_boundaries(self.boundaries3)
+        if len(self.stack.stack_windows[-1]) <4:
+            pass
         elif state == len(self.stack.stack_windows[-1]) - 2:
             self.hide_out_of_window_elememts()
             self.stack.stack_windows[-1][state].set_boundaries(self.boundaries1)
