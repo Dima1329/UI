@@ -3,6 +3,7 @@ from UIButton import *
 from UIInfo import *
 from UIMainStack import UIMainStack
 from UIMenu import UIMenu
+from UINowWindowAndState import UINowWindowAndState
 from UIScroll import *
 from UIUpdaterOfBoundaries import *
 window = Tk()
@@ -11,8 +12,9 @@ canvas.pack()
 scroller = UIScroller()
 menu_stack = UIMainStack()
 updater = UIUpdaterOfBoundaries()
-scroller.set_stack(menu_stack)
-updater.set_stack(menu_stack)
+nwas = UINowWindowAndState(menu_stack)
+scroller.set_nwas(nwas)
+updater.set_nwas(nwas)
 canvas.create_rectangle(0, 0, 500, 110, fill="grey")
 bounderies5 = UIElementBoundaries(10, 100000000, 490, 1000000000)
 
